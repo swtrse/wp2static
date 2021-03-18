@@ -102,7 +102,8 @@ class DetectSitemapsURLs {
 
                 if ( $status_code === 200 ) {
                     // Only add wp_site_url to relative urls
-                    if(strlen($sitemap) > 7 && (substr($sitemap, 0, 7) === 'http://' || substr($sitemap, 0, 8) === 'https://')) {
+                    if( strlen($sitemap) > 7 && 
+                        ( substr($sitemap, 0, 7) === 'http://' || substr($sitemap, 0, 8) === 'https://' ) ) {
                         $absolutSitemapUrl = $sitemap;
                     }
                     else {
