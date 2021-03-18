@@ -27,7 +27,7 @@ final class DetectPostsPaginationURLsTest extends TestCase {
             SELECT ID,post_type
             FROM $wpdb->posts
             WHERE post_status = 'publish'
-            AND post_type  = 'post'";
+            AND post_type NOT IN ('revision','nav_menu_item','wpcf7_contact_form','oembed_cache')";
 
         $posts = [
             (object) [
@@ -246,7 +246,7 @@ final class DetectPostsPaginationURLsTest extends TestCase {
             SELECT ID,post_type
             FROM $wpdb->posts
             WHERE post_status = 'publish'
-            AND post_type = 'post'";
+            AND post_type NOT IN ('revision','nav_menu_item','wpcf7_contact_form','oembed_cache')";
 
         $posts = [
             (object) [
