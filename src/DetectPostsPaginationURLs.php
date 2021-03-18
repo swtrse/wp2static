@@ -27,7 +27,7 @@ class DetectPostsPaginationURLs {
                 $wpdb->posts,
                 'publish',
                 'revision',
-                'nav_menu_item'
+                'nav_menu_item',
                 'wpcf7_contact_form'
             )
         );
