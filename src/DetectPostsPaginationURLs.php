@@ -19,17 +19,10 @@ class DetectPostsPaginationURLs {
             SELECT ID,post_type
             FROM %s
             WHERE post_status = '%s'
-            AND post_type NOT IN ('%s','%s','%s')";
+            AND post_type 'post';
 
         $posts = $wpdb->get_results(
-            sprintf(
-                $query,
-                $wpdb->posts,
-                'publish',
-                'revision',
-                'nav_menu_item',
-                'wpcf7_contact_form'
-            )
+            sprintf( $query, $wpdb->posts, 'publish' )
         );
 
         foreach ( $posts as $post ) {
