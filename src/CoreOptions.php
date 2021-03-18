@@ -472,6 +472,36 @@ class CoreOptions {
                     [ 'name' => 'completionWebhookMethod' ]
                 );
 
+                $wpdb->update(
+                    $table_name,
+                    [ 'value' => isset( $_POST['detectAuthorArchivePages'] ) ? 1 : 0 ],
+                    [ 'name' => 'detectAuthorArchivePages' ]
+                );
+
+                $wpdb->update(
+                    $table_name,
+                    [ 'value' => isset( $_POST['detectDateArchivePages'] ) ? 1 : 0 ],
+                    [ 'name' => 'detectDateArchivePages' ]
+                );
+
+                $wpdb->update(
+                    $table_name,
+                    [ 'value' => isset( $_POST['includeRootSitemap'] ) ? 1 : 0 ],
+                    [ 'name' => 'includeRootSitemap' ]
+                );
+
+                $wpdb->update(
+                    $table_name,
+                    [ 'value' => isset( $_POST['includeRootFavicon'] ) ? 1 : 0 ],
+                    [ 'name' => 'includeRootFavicon' ]
+                );
+
+                $wpdb->update(
+                    $table_name,
+                    [ 'value' => isset( $_POST['includeRootRobots'] ) ? 1 : 0 ],
+                    [ 'name' => 'includeRootRobots' ]
+                );
+
                 break;
             case 'jobs':
                 $queue_on_post_save = isset( $_POST['queueJobOnPostSave'] ) ? 1 : 0;
