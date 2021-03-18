@@ -11,7 +11,7 @@ A fork of a WordPress plugin for static site generation and deployment.
  - composer install
  - composer build wp2static
  - cd ~/Downloads
- - Take the zip file and uploadthe plugin in the wordpress admin panel 
+ - Take the zip file and upload the plugin in the wordpress admin panel 
  
 
 ## Differences to original version
