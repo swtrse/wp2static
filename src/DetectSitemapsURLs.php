@@ -101,13 +101,11 @@ class DetectSitemapsURLs {
                 $status_code = $response->getStatusCode();
 
                 if ( $status_code === 200 ) {
-                    //Only add wp_site_url to relative urls
-                    if(strlen($sitemap) > 7 && (substr($sitemap, 0, 7) === 'http://' || substr($sitemap, 0, 8) === 'https://'))
-                    {
+                    // Only add wp_site_url to relative urls
+                    if(strlen($sitemap) > 7 && (substr($sitemap, 0, 7) === 'http://' || substr($sitemap, 0, 8) === 'https://')) {
                         $absolutSitemapUrl = $sitemap;
                     }
-                    else
-                    {
+                    else {
                         $absolutSitemapUrl = $wp_site_url . $sitemap;
                     }
                     $parser->parse( $wp_site_url . $sitemap );
