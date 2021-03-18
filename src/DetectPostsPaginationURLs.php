@@ -19,7 +19,7 @@ class DetectPostsPaginationURLs {
             SELECT ID,post_type
             FROM %s
             WHERE post_status = '%s'
-            AND post_type 'post';
+            AND post_type 'post'";
 
         $posts = $wpdb->get_results(
             sprintf( $query, $wpdb->posts, 'publish' )
