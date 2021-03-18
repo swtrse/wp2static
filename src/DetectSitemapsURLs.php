@@ -102,16 +102,15 @@ class DetectSitemapsURLs {
 
                 if ( $status_code === 200 ) {
                     // Only add wp_site_url to relative urls
-                    if ( strlen( $sitemap ) > 7 && 
+                    if ( strlen( $sitemap ) > 7 &&
                         ( substr( $sitemap, 0, 7 ) === 'http://' ||
-                          substr( $sitemap, 0, 8 ) === 'https://' ) 
+                          substr( $sitemap, 0, 8 ) === 'https://' )
                        ) {
-                        $absolutSitemapUrl = $sitemap;
+                        $absolut_sitemap_url = $sitemap;
+                    } else {
+                        $absolut_sitemap_url = $wp_site_url . $sitemap;
                     }
-                    else {
-                        $absolutSitemapUrl = $wp_site_url . $sitemap;
-                    }
-                    $parser->parse( $wp_site_url . $sitemap );
+                    $parser->parse( $absolut_sitemap_url );
 
                     $sitemaps_urls[] = '/' . str_replace(
                         $wp_site_url,
