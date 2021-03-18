@@ -22,6 +22,11 @@ class ViewRenderer {
             'detectUploads' => CoreOptions::get( 'detectUploads' ),
             'deploymentURL' => CoreOptions::get( 'deploymentURL' ),
             'useCrawlCaching' => CoreOptions::get( 'useCrawlCaching' ),
+            'detectDateArchivePages' => CoreOptions::get( 'detectDateArchivePages' ),
+            'detectAuthorArchivePages' => CoreOptions::get( 'detectAuthorArchivePages' ),
+            'includeRootFavicon' => CoreOptions::get( 'includeRootFavicon' ),
+            'includeRootSitemap' => CoreOptions::get( 'includeRootSitemap' ),
+            'includeRootRobots' => CoreOptions::get( 'includeRootRobots' ),
         ];
 
         require_once WP2STATIC_PATH . 'views/options-page.php';
