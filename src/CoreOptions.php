@@ -77,6 +77,54 @@ class CoreOptions {
 
         $queries[] = $wpdb->prepare(
             $query_string,
+            'detectDateArchivePages',
+            '1',
+            'Detect Date Archive Pages',
+            'Include Date Archive Pages in URL Detection.'
+        );
+
+        $queries[] = $wpdb->prepare(
+            $query_string,
+            'detectAuthorArchivePages',
+            '1',
+            'Detect Author Archive Pages',
+            'Include Author Archive Pages in URL Detection.'
+        );
+
+        $queries[] = $wpdb->prepare(
+            $query_string,
+            'includeRootRobots',
+            '1',
+            'Include /robots.txt',
+            'Include /robots.txt in URL Detection.'
+        );
+
+        $queries[] = $wpdb->prepare(
+            $query_string,
+            'includeRootFavicon',
+            '0',
+            'Include /favicon.ico',
+            'Include /favicon.ico in URL Detection.'
+        );
+
+        $queries[] = $wpdb->prepare(
+            $query_string,
+            'includeRootSitemap',
+            '0',
+            'Include /sitemap.xml',
+            'Include /sitemap.xml in URL Detection.'
+        );
+
+        $queries[] = $wpdb->prepare(
+            $query_string,
+            'includeRootRobots',
+            '1',
+            'Include /robots.txt',
+            'Include /robots.txt in URL Detection.'
+        );
+
+        $queries[] = $wpdb->prepare(
+            $query_string,
             'detectPosts',
             '1',
             'Detect Posts',

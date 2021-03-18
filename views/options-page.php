@@ -32,6 +32,57 @@
         <tr>
             <td>
                 <label
+                    for="<?php echo $view['coreOptions']['includeRootRobots']->name; ?>"
+                ><?php echo $view['coreOptions']['includeRootRobots']->label; ?></label>
+            </td>
+            <td>
+                <input
+                    id="<?php echo $view['coreOptions']['includeRootRobots']->name; ?>"
+                    name="<?php echo $view['coreOptions']['includeRootRobots']->name; ?>"
+                    value="1"
+                    type="checkbox"
+                    <?php echo (int) $view['coreOptions']['includeRootRobots']->value === 1 ? 'checked' : ''; ?>
+                />
+            </td>
+        </tr>
+
+        <tr>
+            <td>
+                <label
+                    for="<?php echo $view['coreOptions']['includeRootFavicon']->name; ?>"
+                ><?php echo $view['coreOptions']['includeRootFavicon']->label; ?></label>
+            </td>
+            <td>
+                <input
+                    id="<?php echo $view['coreOptions']['includeRootFavicon']->name; ?>"
+                    name="<?php echo $view['coreOptions']['includeRootFavicon']->name; ?>"
+                    value="1"
+                    type="checkbox"
+                    <?php echo (int) $view['coreOptions']['includeRootFavicon']->value === 1 ? 'checked' : ''; ?>
+                />
+            </td>
+        </tr>
+
+        <tr>
+            <td>
+                <label
+                    for="<?php echo $view['coreOptions']['includeRootSitemap']->name; ?>"
+                ><?php echo $view['coreOptions']['includeRootSitemap']->label; ?></label>
+            </td>
+            <td>
+                <input
+                    id="<?php echo $view['coreOptions']['includeRootSitemap']->name; ?>"
+                    name="<?php echo $view['coreOptions']['includeRootSitemap']->name; ?>"
+                    value="1"
+                    type="checkbox"
+                    <?php echo (int) $view['coreOptions']['includeRootSitemap']->value === 1 ? 'checked' : ''; ?>
+                />
+            </td>
+        </tr>
+
+        <tr>
+            <td>
+                <label
                     for="<?php echo $view['coreOptions']['detectCustomPostTypes']->name; ?>"
                 ><?php echo $view['coreOptions']['detectCustomPostTypes']->label; ?></label>
             </td>
@@ -59,6 +110,40 @@
                     value="1"
                     type="checkbox"
                     <?php echo (int) $view['coreOptions']['detectPages']->value === 1 ? 'checked' : ''; ?>
+                />
+            </td>
+        </tr>
+
+        <tr>
+            <td>
+                <label
+                    for="<?php echo $view['coreOptions']['detectDateArchivePages']->name; ?>"
+                ><?php echo $view['coreOptions']['detectDateArchivePages']->label; ?></label>
+            </td>
+            <td>
+                <input
+                    id="<?php echo $view['coreOptions']['detectDateArchivePages']->name; ?>"
+                    name="<?php echo $view['coreOptions']['detectDateArchivePages']->name; ?>"
+                    value="1"
+                    type="checkbox"
+                    <?php echo (int) $view['coreOptions']['detectDateArchivePages']->value === 1 ? 'checked' : ''; ?>
+                />
+            </td>
+        </tr>
+
+        <tr>
+            <td>
+                <label
+                    for="<?php echo $view['coreOptions']['detectAuthorArchivePages']->name; ?>"
+                ><?php echo $view['coreOptions']['detectAuthorArchivePages']->label; ?></label>
+            </td>
+            <td>
+                <input
+                    id="<?php echo $view['coreOptions']['detectAuthorArchivePages']->name; ?>"
+                    name="<?php echo $view['coreOptions']['detectAuthorArchivePages']->name; ?>"
+                    value="1"
+                    type="checkbox"
+                    <?php echo (int) $view['coreOptions']['detectAuthorArchivePages']->value === 1 ? 'checked' : ''; ?>
                 />
             </td>
         </tr>

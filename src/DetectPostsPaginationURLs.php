@@ -19,7 +19,7 @@ class DetectPostsPaginationURLs {
             SELECT ID,post_type
             FROM %s
             WHERE post_status = '%s'
-            AND post_type NOT IN ('%s','%s')";
+            AND post_type NOT IN ('%s','%s','%s')";
 
         $posts = $wpdb->get_results(
             sprintf(
@@ -28,6 +28,7 @@ class DetectPostsPaginationURLs {
                 'publish',
                 'revision',
                 'nav_menu_item'
+                'wpcf7_contact_form'
             )
         );
 

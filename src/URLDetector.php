@@ -25,28 +25,24 @@ class URLDetector {
         );
 
         $arrays_to_merge = [];
-
-        // TODO: detect robots.txt, etc before adding
         $arrays_to_merge[] = [
             '/',
-            '/robots.txt',
-            '/favicon.ico',
-            '/sitemap.xml',
         ];
-
-        /*
-            TODO: reimplement detection for URLs:
-                'detectCommentPagination',
-                'detectComments',
-                'detectFeedURLs',
-
-        // other options:
-
-         - robots
-         - favicon
-         - sitemaps
-
-        */
+        if ( CoreOptions::getValue( 'includeRootRobots' ) ) {
+            $arrays_to_merge[] = [
+                '/robots.txt',
+            ];
+        }
+        if ( CoreOptions::getValue( 'includeRootFavicon' ) ) {
+            $arrays_to_merge[] = [
+                '/favicon.ico',
+            ];
+        }
+        if ( CoreOptions::getValue( 'includeRootSitemap' ) ) {
+            $arrays_to_merge[] = [
+                '/sitemap.xml',
+            ];
+        }
 
         if ( CoreOptions::getValue( 'detectPosts' ) ) {
             $arrays_to_merge[] = DetectPostURLs::detect();
@@ -107,9 +103,7 @@ class URLDetector {
             $arrays_to_merge[] = DetectPostsPaginationURLs::detect( SiteInfo::getURL( 'site' ) );
         }
 
-        $detect_archives = apply_filters( 'wp2static_detect_archives', 1 );
-
-        if ( $detect_archives ) {
+        if ( CoreOptions::getValue( 'detectDateArchivePages' ) ) {
             $arrays_to_merge[] = DetectArchiveURLs::detect();
         }
 
@@ -125,15 +119,8 @@ class URLDetector {
             $arrays_to_merge[] = DetectCategoryPaginationURLs::detect();
         }
 
-        $detect_authors = apply_filters( 'wp2static_detect_authors', 1 );
-
-        if ( $detect_authors ) {
+        if ( CoreOptions::getValue( 'detectAuthorArchivePages' ) ) {
             $arrays_to_merge[] = DetectAuthorsURLs::detect();
-        }
-
-        $detect_authors_pagination = apply_filters( 'wp2static_detect_authors_pagination', 1 );
-
-        if ( $detect_authors_pagination ) {
             $arrays_to_merge[] = DetectAuthorPaginationURLs::detect( SiteInfo::getUrl( 'site' ) );
         }
 
