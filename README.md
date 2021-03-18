@@ -3,9 +3,16 @@
 A fork of a WordPress plugin for static site generation and deployment.
 
 ---
-## Installation options
+## Installation
 
- - from this source code `git clone https://github.com/swtrse/wp2static.git` (run `composer install` afterwards)
+ - Requirements: composer, zip
+ - git clone https://github.com/swtrse/wp2static.git
+ - cd wp2static
+ - composer install
+ - composer build wp2static
+ - cd ~/Downloads
+ - Take the zip file and uploadthe plugin in the wordpress admin panel 
+ 
 
 ## Differences to original version
 
