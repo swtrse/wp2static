@@ -182,6 +182,23 @@
             </td>
         </tr>
 
+        <tr>
+            <td>
+                <label
+                    for="<?php echo $view['coreOptions']['detectVendorCache']->name; ?>"
+                ><?php echo $view['coreOptions']['detectVendorCache']->label; ?></label>
+            </td>
+            <td>
+                <input
+                    id="<?php echo $view['coreOptions']['detectVendorCache']->name; ?>"
+                    name="<?php echo $view['coreOptions']['detectVendorCache']->name; ?>"
+                    value="1"
+                    type="checkbox"
+                    <?php echo (int) $view['coreOptions']['detectVendorCache']->value === 1 ? 'checked' : ''; ?>
+                />
+            </td>
+        </tr>
+        
         </tbody>
     </table>
 

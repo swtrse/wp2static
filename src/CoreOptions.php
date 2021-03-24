@@ -117,10 +117,10 @@ class CoreOptions {
 
         $queries[] = $wpdb->prepare(
             $query_string,
-            'includeRootRobots',
-            '1',
-            'Include /robots.txt',
-            'Include /robots.txt in URL Detection.'
+            'detectVendorCache',
+            '0',
+            'Detect Vendor Cache',
+            'Include Vendor Cache in URL Detection.'
         );
 
         $queries[] = $wpdb->prepare(
@@ -502,6 +502,12 @@ class CoreOptions {
                     [ 'name' => 'includeRootRobots' ]
                 );
 
+                $wpdb->update(
+                    $table_name,
+                    [ 'value' => isset( $_POST['detectVendorCache'] ) ? 1 : 0 ],
+                    [ 'name' => 'detectVendorCache' ]
+                );
+                
                 break;
             case 'jobs':
                 $queue_on_post_save = isset( $_POST['queueJobOnPostSave'] ) ? 1 : 0;

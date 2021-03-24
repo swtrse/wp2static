@@ -27,6 +27,7 @@ class ViewRenderer {
             'includeRootFavicon' => CoreOptions::get( 'includeRootFavicon' ),
             'includeRootSitemap' => CoreOptions::get( 'includeRootSitemap' ),
             'includeRootRobots' => CoreOptions::get( 'includeRootRobots' ),
+            'detectVendorCache' => CoreOptions::get( 'detectVendorCache' ),
         ];
 
         require_once WP2STATIC_PATH . 'views/options-page.php';

@@ -91,9 +91,7 @@ class URLDetector {
             $arrays_to_merge[] = DetectWPIncludesAssets::detect();
         }
 
-        $detect_vendor_cache = apply_filters( 'wp2static_detect_vendor_cache', 1 );
-
-        if ( $detect_vendor_cache ) {
+        if ( CoreOptions::getValue( 'detectVendorCache' ) ) {
             $arrays_to_merge[] = DetectVendorFiles::detect( SiteInfo::getURL( 'site' ) );
         }
 
