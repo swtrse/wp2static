@@ -127,6 +127,16 @@ class DetectSitemapsURLs {
                             $url
                         );
                     }
+
+                    $extract_urls = $parser->getUrls();
+
+                    foreach ( $extract_urls as $url => $tags ) {
+                        $sitemaps_urls[] = '/' . str_replace(
+                            $wp_site_url,
+                            '',
+                            $url
+                        );
+                    }
                 }
             }
         } catch ( WP2StaticException $e ) {
