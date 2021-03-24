@@ -25,11 +25,13 @@ A fork of a WordPress plugin for static site generation and deployment.
  - Contact forms of "Contact Form 7" that only are shown in the admin backend no longer get added to the detection list
  - SuperCache entries no longer get added to the detection list
  - verndor cache only get addet to the dectection list if option is choosen (This does address the case where cached files from SuperCache got added to the URL list even if cache is handled via ngix or other ways, however since cached files should only be used implicit I see no point in keeping this option, however for compatibility I added the option for the user to choose maybe there are cases where this is usefull)
+ - if sitemaps are parsed, all urls present in the sitemaps will be added to the dectection list (original wp2static only adds embeded sitemaps and no url entries)
 
  ## Configuration Nodes
 
- After playing around quite a bit with this plugin I did come to the conclusion that in most cases, especially if you do not use wordpress for blogging, every detection option can be deactivated.
- The only exception is either robots.txt if it contains the sitemap url or the sitemap option. If the sidemap is complete and correct every page visible should be crawled correctly and no other detection method is necesary.
+ After playing around quite a bit with this plugin I did come to the conclusion that in most cases if you have a sitemap (defined in robots.txt or under the default name sitemap.xml) every other detection option can be deactivated.
+ If the sidemap is complete and correct every page visible should be added to the dectection list correctly and no other detection method is necesary.
+ As for now the only exception to that is that you have to activate the detect uploads option, otherwise the images used in the pages and posts will not be crawled.
 
 ## Version Numbering
 
