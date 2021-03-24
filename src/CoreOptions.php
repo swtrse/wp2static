@@ -507,7 +507,7 @@ class CoreOptions {
                     [ 'value' => isset( $_POST['detectVendorCache'] ) ? 1 : 0 ],
                     [ 'name' => 'detectVendorCache' ]
                 );
-                
+
                 break;
             case 'jobs':
                 $queue_on_post_save = isset( $_POST['queueJobOnPostSave'] ) ? 1 : 0;
