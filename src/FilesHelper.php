@@ -196,27 +196,45 @@ class FilesHelper {
      */
     public static function cleanDetectedURLs( array $urls ) : array {
         $home_url = SiteInfo::getUrl( 'home' );
-
         if ( ! is_string( $home_url ) ) {
             $err = 'Home URL not defined ';
             WsLog::l( $err );
             throw new WP2StaticException( $err );
         }
+        $home_host = parse_url( $home_url, PHP_URL_HOST );
+        $homes = [
+            "https://$home_host/",
+            "http://$home_host/",
+            "https://$home_host",
+            "http://$home_host",
+        ];
 
+        return self::cleanDetectedSecureURLs( $urls, $homes );
+    }
+
+    /**
+     * @param string[]|null[] $urls list of absolute or relative URLs
+     * @param string[] $home_urls list of home urls
+     * @return string[]|null[] list of relative URLs
+     * @throws WP2StaticException
+     */
+    private static function cleanDetectedSecureURLs( array $urls, array $home_urls ) : array {
         $cleaned_urls = array_map(
             // trim hashes/query strings
-            function ( $url ) use ( $home_url ) {
+            function ( $url ) use ( $home_urls ) {
                 if ( ! $url ) {
                     return;
                 }
 
                 // NOTE: 2 x str_replace's significantly faster than
                 // 1 x str_replace with search/replace arrays of 2 length
-                $url = str_replace(
-                    $home_url,
-                    '/',
-                    $url
-                );
+                foreach ( $home_urls as $home_url ) {
+                    $url = str_replace(
+                        $home_url,
+                        '/',
+                        $url
+                    );
+                }
 
                 $url = str_replace(
                     '//',

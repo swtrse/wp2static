@@ -24,7 +24,7 @@ A fork of a WordPress plugin for static site generation and deployment.
  - Archive Pages based on author only getadded to the dectection list if the option is choosen
  - Contact forms of "Contact Form 7" that only are shown in the admin backend no longer get added to the detection list
  - SuperCache entries no longer get added to the detection list
- - verndor cache only get addet to the dectection list if option is choosen (This does address the case where cached files from SuperCache got added to the URL list even if cache is handled via ngix or other ways, however since cached files should only be used implicit I see no point in keeping this option, however for compatibility I added the option for the user to choose maybe there are cases where this is usefull)
+ - vendor cache only get addet to the dectection list if option is choosen (This does address the case where cached files from SuperCache got added to the URL list even if cache is handled via ngix or other ways, however since cached files should only be used implicit I see no point in keeping this option, however for compatibility I added the option for the user to choose maybe there are cases where this is usefull)
  - if sitemaps are parsed, all urls present in the sitemaps will be added to the dectection list (original wp2static only adds embeded sitemaps and no url entries)
 
  ## Configuration Nodes

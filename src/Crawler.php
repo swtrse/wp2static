@@ -106,7 +106,6 @@ class Crawler {
         foreach ( $crawlable_paths as $root_relative_path ) {
             $absolute_uri = new URL( $this->site_path . $root_relative_path );
             $url = $absolute_uri->get();
-
             $response = $this->crawlURL( $url );
 
             if ( ! $response ) {
